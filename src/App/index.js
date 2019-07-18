@@ -1,11 +1,14 @@
-import React from 'react'
+import React from 'react'; 
+import "./App.css"; 
+
+
+// importing 
+import TodoApp from "../components/TodoApp";
 
 const index = () => {
     return (
-        <div>
-            Hellow there my name is app index 
-        </div>
+        <TodoApp />
     )
 }
 
-export default index
+export default index;
