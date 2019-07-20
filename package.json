@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@material-ui/core": "4.2.1",
+    "@material-ui/icons": "^4.2.1",
     "axios": "^0.18.0",
     "classnames": "^2.2.6",
     "jwt-decode": "^2.2.0",
@@ -23,8 +25,8 @@
   },
   "proxy": "http://localhost:5000",
   "scripts": {
-    "build-css": "node-sass ./src/App -o ./src/App",
-    "watch-css": "npm run build-css && node-sass ./src/App -o ./src/App -w",
+    "build-css": "node-sass ./src/components/App -o ./src/components/App",
+    "watch-css": "npm run build-css && node-sass ./src/components/App -o ./src/components/App -w",
     "start-js": "react-scripts start",
     "start": "npm-run-all -p watch-css start-js",
     "build-js": "react-scripts build",
