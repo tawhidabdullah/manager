@@ -11,7 +11,7 @@ const styles = {
   }
 };
 
-const Index = ({ exercises, category, onSelect, exercise }) => {
+const Index = ({handleExerciseEdit, muscles, exercises, category, onSelect, exercise, handleExerciseDelete, handleSelectEdit, editMode }) => {
   return (
     <Grid container spacing={2}>
       <Grid item sm>
@@ -20,10 +20,12 @@ const Index = ({ exercises, category, onSelect, exercise }) => {
           category={category}
           exercises={exercises}
           styles={styles}
+          handleDelete={handleExerciseDelete}
+          handleSelectEdit={handleSelectEdit}
         />
       </Grid>
       <Grid item sm>
-        <RightPane exercise={exercise} styles={styles} />
+        <RightPane onEdit={handleExerciseEdit} muscles={muscles} exercise={exercise} styles={styles} editMode={editMode} />
       </Grid>
     </Grid>
   );

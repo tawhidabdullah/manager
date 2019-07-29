@@ -4,10 +4,13 @@ import {
   Typography,
   List,
   ListItemText,
-  ListItem
+  ListItem,
+  IconButton,
+  ListItemSecondaryAction
 } from "@material-ui/core";
+import {Delete, Edit } from '@material-ui/icons';
 
-const LeftPane = ({ styles, exercises, category, onselect }) => {
+const LeftPane = ({ styles, exercises, category, onselect, handleDelete, handleSelectEdit }) => {
   return (
     <Paper style={styles.Paper}>
       {exercises.map(([musclesGroup, exercises]) => {
@@ -22,8 +25,20 @@ const LeftPane = ({ styles, exercises, category, onselect }) => {
             <List component="ul">
               {exercises.map(({ title, id }) => {
                 return (
-                  <ListItem button onClick={() => onselect(id)}>
+                  <ListItem key={id} button onClick={() => onselect(id)}>
                     <ListItemText primary={title} />
+                    <ListItemSecondaryAction>
+                    <IconButton 
+                      onClick={() => handleSelectEdit(id)} 
+                      >
+                        <Edit />
+                      </IconButton>
+                      <IconButton
+                      onClick={() => handleDelete(id)} 
+                      >
+                        <Delete />
+                      </IconButton>
+                    </ListItemSecondaryAction>
                   </ListItem>
                 );
               })}
